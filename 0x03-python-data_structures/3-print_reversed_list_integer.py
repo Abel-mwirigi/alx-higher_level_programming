@@ -5,4 +5,3 @@ def print_reversed_list_integer(my_list=[]):
     while (idx >= 0):
         print("{}".format(my_list[idx]))
         idx -= 1
-    return
