@@ -1,0 +1,39 @@
+this file defines an addition fuction ``add_integer(a, b=98)``
+
+usage
+
+``add_integer(...)`` returns a sum of two arguments.
+
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(1, 1)
+	2
+
+::
+
+	>>> add_integer(2, -8)
+	-6
+
+float values are converted to ints by typecasting therefore
+::
+
+	>>> add_integer(2.0, 3.0)
+	5
+
+can also handle negative floats
+::
+	>>> add_integer(-3.5, -3.5)
+	-6
+
+mixed signed values can be combined
+::
+
+	>>> add_integer(2.3, -3)
+	-1
+
+ommision of passing the second value results to automatic 98
+::
+
+	>>> add_integer(902)
+	1000
