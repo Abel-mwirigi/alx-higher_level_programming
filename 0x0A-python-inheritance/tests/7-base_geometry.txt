@@ -1,0 +1,66 @@
+This module tests the inheritance of class ``BaseGeometry``
+
+
+::
+	>>> Base = __import__("7-base_geometry").BaseGeometry
+
+::
+	>>> m = __import__("7-base_geometry").__doc__
+	>>> len(m) > 1
+	True
+
+::
+
+	>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(c) > 1
+	True
+
+::
+	>>> b = Base()
+	>>> b.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+
+::
+	>>> b = Base()
+	>>> b.area(1)
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+
+::
+	>>> b.integer_validator("integer", 0)
+	Traceback (most recent call last):
+        ...
+        ValueError: integer must be greater than 0
+
+
+::
+	>>> b.integer_validator("integer", -5)
+	Traceback (most recent call last):
+        ...
+	ValueError: integer must be greater than 0
+
+
+::
+	>>> b.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+::
+	>>> b.integer_validator("integer")
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
+::
+	>>> b.integer_validator("integer", 3, 4, 5)
+	Traceback (most recent call last):
+	...
+	TypeError: BaseGeometry.integer_validator() takes 3 positional arguments but 5 were given
