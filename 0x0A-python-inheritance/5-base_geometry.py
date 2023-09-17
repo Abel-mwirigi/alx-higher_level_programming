@@ -5,7 +5,9 @@ An empty class
 
 
 class BaseGeometry:
-    """creating an empty class"""
-
+    """
+    creating an empty class
+    """
+    
     def __init__(self):
         pass
