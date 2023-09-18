@@ -5,8 +5,12 @@ Defining a baseGeometry class
 
 
 class BaseGeometry:
-    """creating an baseGeometry class"""
+    """
+    creating an baseGeometry class
+    """
 
     def area(self):
-        """to be implemented"""
+        """
+        to be implemented
+        """
         raise Exception("area() is not implemented")
