@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """function defining base class"""
+import json
+import os
+
 
 class Base:
     """Base class"""
