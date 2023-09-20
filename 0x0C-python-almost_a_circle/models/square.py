@@ -4,7 +4,10 @@
 from models.rectangle import Rectangle
 
 class Square(Rectangle):
+    """square class that inherits from rectangle"""
+
     def __init__(self, size, x=0, y=0, id=None):
+        """calling the super class"""
         super().__init__(size, size, x, y, id)
 
     @property
@@ -19,6 +22,8 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute"""
+        
         if args:
             if len(args) >= 1:
                 self.id = args[0]
