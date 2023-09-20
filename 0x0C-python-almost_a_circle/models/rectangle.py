@@ -15,10 +15,12 @@ class Rectangle(Base):
     """getter and setter for width"""
     @property
     def width(self):
+        """gets the value for width"""
         return self.__width
     
     @width.setter
     def width(self, value):
+        """sets the value for width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         
@@ -30,10 +32,12 @@ class Rectangle(Base):
     """getter and setter for height"""
     @property
     def height(self):
+        """gets the value for height"""
         return self.__height
     
     @height.setter
     def height(self, value):
+        """sets the value for height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
 
@@ -45,10 +49,12 @@ class Rectangle(Base):
     """getter and setter for x"""
     @property
     def x(self):
+        """gets the value for x"""
         return self.__x
     
     @x.setter
     def x(self, value):
+        """sets the value for x"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         
@@ -60,10 +66,12 @@ class Rectangle(Base):
     """getter and setter for y"""
     @property
     def y(self):
+        """gets the value for y"""
         return self.__y
     
     @y.setter
     def y(self, value):
+        """sets the value for y"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         
@@ -92,6 +100,8 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,self.x, self.y,self.width, self.height)
 
     def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute"""
+        
         if len(args) >= 1:
             self.id = args[0]
         if len(args) >= 2:
