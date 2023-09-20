@@ -38,7 +38,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """sets the value for height"""
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("height must be an integer")
 
         if value <= 0:
@@ -86,13 +86,16 @@ class Rectangle(Base):
 
     def display(self):
         """function to print the instance with the character #"""
-        for k in range(self.__x):
+        for i in range(self.__y):
             print()
         for i in range(self.__height):
-            """for l in range(self.__y):"""
-            print(" "*self.__y, end="")
-            for j in range(self.__width):
-                print("#", end="")
+            for l in range(self.__x):
+                print(" ", end="")
+            for l in range(self.__width):
+                if i == 0 or i == self.height - 1 or l == 0 or l == self.width - 1:
+                    print("#", end="")
+                else:
+                    print(" ", end="")
             print()
 
     def __str__(self):
